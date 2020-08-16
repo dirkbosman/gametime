@@ -1,25 +1,18 @@
 import React from 'react';
-import logo from "./assets/wikigames-logo.png"
+
 import './App.css';
+
+import Header from "./components/Header/Header"
+import Main from "./components/Main/Main"
+import Footer from "./components/Footer/Footer"
 
 
 function App() {
   return (
-    <div className="App">
-      <header>
-        <div className="headerWrapper">
-          <div className="logoWrapper">
-            <img src={logo} alt="Logo" />
-            <div className="Headline">WikiGames</div>
-          </div>
-        </div>
-      </header>
-      <main>
-        <div className="mainWrapper"></div>
-      </main>
-      <footer>
-        <div className="footerWrapper"></div>
-      </footer>
+    <div className="app">
+      <Header />
+      <Main />
+      <Footer />
     </div>
   );
 }
