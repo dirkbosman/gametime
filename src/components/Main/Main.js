@@ -3,8 +3,8 @@ import * as Contentful from "contentful"
 import "./main.css"
 
 const client = Contentful.createClient({
-    space: 'lr6yfxctthfu',
-    accessToken: 'qCol8PdpNVGA2LR-9bHYlTSBbYfhPfSZS5GTj8kyHxo'
+    space: process.env.REACT_APP_SPACE_ID,
+    accessToken: process.env.REACT_APP_ACCESS_TOKEN
 })
 
 function Main() {
@@ -23,8 +23,8 @@ function Main() {
     const Entries = entries.map((entry) => (
         <div className="entry card" key={entry.sys.id}>
             <h3>{entry.fields.name}</h3>
-            <h4>{entry.fields.category}: {entry.fields.subCategory}</h4>
-            <p>Participant: {entry.fields.participant}</p>       
+            <h4>{entry.fields.category}:<br/>{entry.fields.subCategory}</h4>
+            <p>{entry.fields.players}</p>       
         </div>
     ));
 
