@@ -1,14 +1,12 @@
 import React, { useContext, useEffect } from "react";
 import Loader from "react-loader-spinner";
 
-import { Link, Switch, BrowserRouter as Router, Route } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./PreviewWrapper.css";
 import { StateContext } from "../../context";
 
 export default function PreviewWrapper() {
-  const { entries, setEntries, client, options, loading } = useContext(
-    StateContext
-  );
+  const { entries, setEntries, client, loading } = useContext(StateContext);
 
   // delete later
   useEffect(() => {

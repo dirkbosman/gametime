@@ -1,22 +1,16 @@
-import React, { useState, useEffect, useContext } from "react";
-import {
-  useParams,
-  Switch,
-  BrowserRouter as Router,
-  Route,
-} from "react-router-dom";
+import React, { useEffect, useContext } from "react";
 import { StateContext } from "./context";
-import Header from "./components/Header/Header";
-// import Main from "./components/Main/Main"
-import Footer from "./components/Footer/Footer";
-import PreviewWrapper from "./components/Main/PreviewWrapper";
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import { Switch, BrowserRouter as Router, Route } from "react-router-dom";
+import { Header, PreviewWrapper, Entry, Footer } from "./components";
 
+// do we still need this?
 require("dotenv").config();
 
 function App() {
+  // do we still need this?
   const { entries, setEntries, client, options } = useContext(StateContext);
 
+  // do we still need this?
   useEffect(() => {
     client.getEntries({ content_type: "games" }).then((response) => {
       setEntries(response.items);
@@ -27,43 +21,18 @@ function App() {
     <Router>
       <div className="app">
         <Header />
-        {/* <main>
-        <div className="entriesWrapper">{Entries}</div>
-      </main> */}
-
         <Switch>
           <Route exact path="/">
             <PreviewWrapper />
           </Route>
           <Route path="/:name">
-            {/* <Entries /> */}
             <Entry />
           </Route>
         </Switch>
-
         <Footer />
-
-        {/* <Entry path={entries.fields.path} /> */}
       </div>
     </Router>
   );
 }
-
-const Entry = () => {
-  const { name } = useParams();
-  const { entries, options } = useContext(StateContext);
-
-  const Entry = entries
-    // replace slug in the entry.fields.name
-    .filter((entry) => entry.fields.name === name)
-    .map((entry) => (
-      <div className="detailed-entry" key={entry.sys.id}>
-        <h1>{entry.fields.name}</h1>
-        {documentToReactComponents(entry.fields.description, options)}
-      </div>
-    ));
-
-  return <h1>{Entry}</h1>;
-};
 
 export default App;

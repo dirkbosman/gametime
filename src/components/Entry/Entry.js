@@ -1,10 +1,7 @@
 import React, { useContext, useEffect } from "react";
-// import Loader from "react-loader-spinner";
-// import "./PreviewWrapper.css";
+import { useParams } from "react-router-dom";
 import { StateContext } from "../../context";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
-
-import { useParams } from "react-router-dom";
 
 require("dotenv").config();
 // delete unneccesarry props
@@ -19,9 +16,10 @@ function Entry() {
     setLoading,
   } = useContext(StateContext);
 
-  const { slug } = useParams();
+  const { name } = useParams();
+  // const { slug } = useParams();
+  // console.log("slug: " + slug);
 
-  console.log("slug: " + slug);
   //delete this later
   useEffect(() => {
     client.getEntries({ content_type: "games" }).then((response) => {
@@ -30,15 +28,27 @@ function Entry() {
   }, []);
 
   const Entry = entries
-    .filter((entry) => entry.slug === slug)
+    // replace slug in the entry.fields.name
+    .filter((entry) => entry.fields.name === name)
     .map((entry) => (
       <div className="detailed-entry" key={entry.sys.id}>
-        <h1>{entry.fields.names}</h1>
-        {/*documentToReactComponents(entry.fields.description, options)*/}
+        <h1>{entry.fields.name}</h1>
+        {documentToReactComponents(entry.fields.description, options)}
       </div>
     ));
 
-  return <div className="entriesWrapper">{Entry}</div>;
+  return <h1>{Entry}</h1>;
+
+  // const Entry = entries
+  //   .filter((entry) => entry.slug === slug)
+  //   .map((entry) => (
+  //     <div className="detailed-entry" key={entry.sys.id}>
+  //       <h1>{entry.fields.names}</h1>
+  //       {documentToReactComponents(entry.fields.description, options)}
+  //     </div>
+  //   ));
+
+  // return <div className="entriesWrapper">{Entry}</div>;
 }
 
 export default Entry;
