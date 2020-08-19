@@ -15,9 +15,7 @@
     "react-pro-sidebar": "^0.4.3",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3",
-    "webfontloader": "^1.6.28",
-    "webpack": "^4.44.1",
-    "webpack-cli": "^3.3.12"
+    "webfontloader": "^1.6.28"
   },
   "scripts": {
     "start": "react-scripts start",
