@@ -4,7 +4,7 @@ import { Switch, BrowserRouter as Router, Route } from "react-router-dom";
 import { Header, PreviewWrapper, Entry, Footer } from "./components";
 
 // do we still need this?
-require("dotenv").config();
+// require("dotenv").config();
 
 function App() {
   // do we still need this?

@@ -34,25 +34,23 @@ export default function PreviewWrapper() {
   ));
 
   return (
-    <div className="mainContainer">
-      <div className="entriesWrapper">
-        {loading ? (
-          <Loader type="Circles" color="#1ab188" height={150} width={150} />
-        ) : (
-          // Wrap in a-tag to link to other detail page.
+    <div className="entriesWrapper">
+      {loading ? (
+        <Loader type="Circles" color="#1ab188" height={150} width={150} />
+      ) : (
+        // Wrap in a-tag to link to other detail page.
 
-          // <div className="level-left">
-          //   <Link className="level-item button is-small is-link is-outlined" to={props.path}>Read More</Link>
-          // </div>
+        // <div className="level-left">
+        //   <Link className="level-item button is-small is-link is-outlined" to={props.path}>Read More</Link>
+        // </div>
 
-          <div className="entriesWrapper">{Entries}</div>
-          // if onCLick entries => not visible
-          // => detail entry block/none
+        <div className="entriesWrapper">{Entries}</div>
+        // if onCLick entries => not visible
+        // => detail entry block/none
 
-          // { Entries ? Entries : Entry }
-          // children --> insert component of Entry here <Entry (**passing the fields.path)/>
-        )}
-      </div>
+        // { Entries ? Entries : Entry }
+        // children --> insert component of Entry here <Entry (**passing the fields.path)/>
+      )}
     </div>
   );
 }
