@@ -33,7 +33,9 @@ function Main() {
 
   return (
     <div className="mainContainer">
-      <div className="entriesWrapper">{Entries}</div>
+      <Link to="/online-game/krunker" className="entriesWrapper">
+        {Entries}
+      </Link>
     </div>
   );
 }

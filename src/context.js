@@ -39,7 +39,7 @@ const ContextProvider = ({ children }) => {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    client.getEntries({ content_type: "blogText" }).then((response) => {
+    client.getEntries({ content_type: "games" }).then((response) => {
       setEntries(response.items);
     });
   }, []);
@@ -52,6 +52,7 @@ const ContextProvider = ({ children }) => {
         client,
         options,
         loading,
+        setLoading,
       }}
     >
       {children}
