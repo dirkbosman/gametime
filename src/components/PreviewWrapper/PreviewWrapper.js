@@ -6,7 +6,7 @@ import "./PreviewWrapper.css";
 import { StateContext } from "../../context";
 
 export default function PreviewWrapper() {
-  const { entries, setEntries, client, loading } = useContext(StateContext);
+  const { entries, setEntries, filters, setFilter, client, loading } = useContext(StateContext);
 
   // delete later
   useEffect(() => {
@@ -14,19 +14,25 @@ export default function PreviewWrapper() {
       setEntries(response.items);
     });
   }, []);
+  
   // map all the games into multiple cards (how one card looks like)
-  const Entries = entries.map((entry) => (
-    <Link to={"/" + entry.fields.name}>
+
+  // Apply filter function to map
+  const Entries = entries.filter(function (entries) { 
+    if (filters==="All") {return entries.fields.category;} else {return entries.fields.category === filters;}
+  }).map((entry) => (
+
+    <Link style={{textDecoration: "none"}} to={"/" + entry.fields.name} onClick={() => setFilter(entry.fields.category)}>
       <div
         className="simple-entry card"
         key={entry.sys.id}
         href={entry.fields.path}
       >
         <h3>{entry.fields.name}</h3>
-        <h4>
+        <h5>
           {entry.fields.category}:<br />
           {entry.fields.subCategory}
-        </h4>
+        </h5>
         <p>{entry.fields.players}</p>
         <p>{entry.fields.path}</p>
       </div>
@@ -35,21 +41,15 @@ export default function PreviewWrapper() {
 
   return (
     <div className="entriesWrapper">
+      <button onClick={() => setFilter("All")}>All</button>
+        <button onClick={() => setFilter("Online Games")}>Online Games</button>
+        <button onClick={() => setFilter("Card Games")}>Card Games</button>
+        <button onClick={() => setFilter("Party Games")}>Party Games</button>
+        <button onClick={() => setFilter("Board Games")}>Board Games</button>
       {loading ? (
         <Loader type="Circles" color="#1ab188" height={150} width={150} />
       ) : (
-        // Wrap in a-tag to link to other detail page.
-
-        // <div className="level-left">
-        //   <Link className="level-item button is-small is-link is-outlined" to={props.path}>Read More</Link>
-        // </div>
-
-        <div className="entriesWrapper">{Entries}</div>
-        // if onCLick entries => not visible
-        // => detail entry block/none
-
-        // { Entries ? Entries : Entry }
-        // children --> insert component of Entry here <Entry (**passing the fields.path)/>
+          <div className="entriesWrapper">{Entries}</div>
       )}
     </div>
   );

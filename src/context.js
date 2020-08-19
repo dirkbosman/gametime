@@ -36,6 +36,7 @@ const options = {
 
 const ContextProvider = ({ children }) => {
   const [entries, setEntries] = useState([]);
+  const [filters, setFilter] = useState("All");
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -49,6 +50,8 @@ const ContextProvider = ({ children }) => {
       value={{
         entries,
         setEntries,
+        filters, 
+        setFilter,
         client,
         options,
         loading,

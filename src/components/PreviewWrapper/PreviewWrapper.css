@@ -30,6 +30,16 @@
   cursor: pointer;
 }
 
+.simple-entry > * {
+  margin-block-start: 10px;
+  margin-block-end: 10px;
+  color: #505050
+}
+
+.simple-entry p {
+  font-size: 12px;
+}
+
 .card {
   background: #fff;
   border-radius: 2px;

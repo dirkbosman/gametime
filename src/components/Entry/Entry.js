@@ -2,30 +2,43 @@ import React, { useContext, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { StateContext } from "../../context";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import { Link} from "react-router-dom";
+
 
 require("dotenv").config();
 // delete unneccesarry props
 
 function Entry() {
-  const {
-    entries,
-    setEntries,
-    client,
-    options,
-    loading,
-    setLoading,
-  } = useContext(StateContext);
 
+  const { entries, setEntries, filters, setFilter, client, options } = useContext(StateContext);
   const { name } = useParams();
-  // const { slug } = useParams();
-  // console.log("slug: " + slug);
 
-  //delete this later
   useEffect(() => {
     client.getEntries({ content_type: "games" }).then((response) => {
       setEntries(response.items);
     });
   }, []);
+  
+  const RelatedEntries = entries.filter(function (entries) { 
+    if (filters) {return entries.fields.category === filters;}
+  }).map((entry) => (
+  
+    <Link style={{textDecoration: "none"}} to={"/" + entry.fields.name}>
+      <div
+        className="simple-entry card"
+        key={entry.sys.id}
+        href={entry.fields.path}
+      >
+        <h3>{entry.fields.name}</h3>
+        <h5>
+          {entry.fields.category}:<br />
+          {entry.fields.subCategory}
+        </h5>
+        <p>{entry.fields.players}</p>
+        <p>{entry.fields.path}</p>
+      </div>
+    </Link>
+  )).slice(0, 3);
 
   const Entry = entries
     // replace slug in the entry.fields.name
@@ -37,18 +50,17 @@ function Entry() {
       </div>
     ));
 
-  return <h1>{Entry}</h1>;
+  function goBack() {
+    window.history.back();
+  }  
 
-  // const Entry = entries
-  //   .filter((entry) => entry.slug === slug)
-  //   .map((entry) => (
-  //     <div className="detailed-entry" key={entry.sys.id}>
-  //       <h1>{entry.fields.names}</h1>
-  //       {documentToReactComponents(entry.fields.description, options)}
-  //     </div>
-  //   ));
-
-  // return <div className="entriesWrapper">{Entry}</div>;
+  return (
+    <div>
+      <button onClick={goBack}>Go Back</button>
+      <h1>{Entry}</h1>
+      <div className="relatedEntriesWrapper">{RelatedEntries}</div>
+    </div>)
+  ;
 }
 
 export default Entry;
