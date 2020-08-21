@@ -1,0 +1,52 @@
+.PreviewWrapper {
+  display: flex;
+  /* flex-direction: row; */
+  align-items: center;
+  justify-content: center;
+  height: 600px;
+  width: 600px;
+  max-width: 400px;
+  max-height: 600px;
+  color: transparent;
+  background-color: white;
+  border-radius: 5px;
+  margin: 10px;
+}
+
+.entriesWrapper {
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.simple-entry {
+  padding: 20px;
+  margin: 10px;
+  width: 200px;
+  align-items: flex-start;
+  cursor: pointer;
+}
+
+.simple-entry > * {
+  margin-block-start: 10px;
+  margin-block-end: 10px;
+  color: #505050
+}
+
+.simple-entry p {
+  font-size: 12px;
+}
+
+.card {
+  background: #fff;
+  border-radius: 2px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.card:hover {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
