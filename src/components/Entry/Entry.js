@@ -4,6 +4,7 @@ import { StateContext } from "../../context";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { Link} from "react-router-dom";
 
+import "./Entry.css"
 
 require("dotenv").config();
 // delete unneccesarry props
@@ -44,9 +45,9 @@ function Entry() {
     // replace slug in the entry.fields.name
     .filter((entry) => entry.fields.name === name)
     .map((entry) => (
-      <div className="detailed-entry" key={entry.sys.id}>
+      <div className="detailed-entry card" key={entry.sys.id}>
         <h1>{entry.fields.name}</h1>
-        {documentToReactComponents(entry.fields.description, options)}
+        <div className="main-text">{documentToReactComponents(entry.fields.description, options)}</div>
       </div>
     ));
 
@@ -57,7 +58,7 @@ function Entry() {
   return (
     <div>
       <button onClick={goBack}>Go Back</button>
-      <h1>{Entry}</h1>
+      <div className="detailed-entry-container">{Entry}</div>
       <div className="relatedEntriesWrapper">{RelatedEntries}</div>
     </div>)
   ;

@@ -41,11 +41,13 @@ export default function PreviewWrapper() {
 
   return (
     <div className="entriesWrapper">
-      <button onClick={() => setFilter("All")}>All</button>
+      {/* <div className="buttonsWrapper">
+        <button onClick={() => setFilter("All")}>All Games</button>
         <button onClick={() => setFilter("Online Games")}>Online Games</button>
         <button onClick={() => setFilter("Card Games")}>Card Games</button>
         <button onClick={() => setFilter("Party Games")}>Party Games</button>
         <button onClick={() => setFilter("Board Games")}>Board Games</button>
+          </div> */}
       {loading ? (
         <Loader type="Circles" color="#1ab188" height={150} width={150} />
       ) : (

@@ -1,0 +1,18 @@
+.detailed-entry-container {
+    display: grid;
+    place-items: center;
+}
+
+.detailed-entry {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    margin: 20px;
+    padding: 20px;
+}
+
+.card {
+    border-radius: 2px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  }
