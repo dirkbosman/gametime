@@ -4,7 +4,6 @@ import { StateContext } from "../../context";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { Link} from "react-router-dom";
 import { SocialIcon } from "react-social-icons";
-import { backButton } from "./assets/back.png";
 
 import "./Entry.css"
 

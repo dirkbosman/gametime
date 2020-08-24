@@ -28,26 +28,57 @@ function Header() {
     <div className="headerContainer">
       <Link to="/" style={{textDecoration: "none"}}>
           <div className="logoWrapper">
-            <img src={logo1} alt="logo1" />
-            <img src={logo2} alt="logo2" />
-            <img src={logo3} alt="logo3" />
-            <img src={logo4} alt="logo4" />
-            <img src={logo5} alt="logo5" />
-            <img src={logo6} alt="logo6" />
-            <img src={logo7} alt="logo7" />
-            <img src={logo8} alt="logo8" />
-            <img src={logo9} alt="logo9" />
+            <div className="logo-img-wrapper">
+              <img src={logo1} alt="logo1" />
+            </div>
+            <div className="logo-img-wrapper">
+              <img src={logo2} alt="logo2" />
+            </div>
+            <div className="logo-img-wrapper">
+              <img src={logo3} alt="logo3" />
+            </div>
+            <div className="logo-img-wrapper">
+              <img src={logo4} alt="logo4" />
+            </div>
+            <div className="logo-img-wrapper">
+              <img src={logo5} alt="logo5" />
+            </div>
+            <div className="logo-img-wrapper">
+              <img src={logo6} alt="logo6" />
+            </div>
+            <div className="logo-img-wrapper">
+              <img src={logo7} alt="logo7" />
+            </div>
+            <div className="logo-img-wrapper">
+              <img src={logo8} alt="logo8" />
+            </div>
+            <div className="logo-img-wrapper">
+              <img src={logo9} alt="logo9" />
+            </div>
+            <div className="logo-img-wrapper">
             <img src={logo10} alt="logo10" />
+            </div>
+            <div className="logo-img-wrapper">
             <img src={logo11} alt="logo11" />
-            <img src={logo12} alt="logo12" />
-            <img src={logo13} alt="logo13" />
-            <img src={logo14} alt="logo14" />
-            <img src={logo15} alt="logo15" />
-            <img src={logo16} alt="logo16" />
-            <img src={logo17} alt="logo17" />
-            <img src={logo18} alt="logo18" />
-            <img src={logo19} alt="logo19" />
-            <img src={logo20} alt="logo20" />
+            </div>
+            <div className="logo-img-wrapper">
+            <img src={logo12} alt="logo12" /></div>
+            <div className="logo-img-wrapper">
+            <img src={logo13} alt="logo13" /></div>
+            <div className="logo-img-wrapper">
+            <img src={logo14} alt="logo14" /></div>
+            <div className="logo-img-wrapper">
+            <img src={logo15} alt="logo15" /></div>
+            <div className="logo-img-wrapper">
+            <img src={logo16} alt="logo16" /></div>
+            <div className="logo-img-wrapper">
+            <img src={logo17} alt="logo17" /></div>
+            <div className="logo-img-wrapper">
+            <img src={logo18} alt="logo18" /></div>
+            <div className="logo-img-wrapper">
+            <img src={logo19} alt="logo19" /></div>
+            <div className="logo-img-wrapper">
+            <img src={logo20} alt="logo20" /></div>
           </div>
           <div className="headline">WikiGames</div>
       </Link>

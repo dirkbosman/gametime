@@ -44,10 +44,16 @@ hr {
 
 .logoWrapper {
     height: 70px;
+    display: grid;
+    grid-template-columns: repeat(20,1fr);
+    overflow: hidden;
 }
 
 .logoWrapper img {
-    height: 70px;
+    height: 100%;
     width: 70px;
-    padding: 3px;
+}
+
+.logo-img-wrapper {
+    display: flex;
 }
