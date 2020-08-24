@@ -24,7 +24,7 @@ export default function PreviewWrapper() {
 
     <Link style={{textDecoration: "none"}} to={"/" + entry.fields.name} onClick={() => setFilter(entry.fields.category)}>
       <div
-        className="simple-entry card"
+        className="simple-entry card-1"
         key={entry.sys.id}
         href={entry.fields.path}
       >
@@ -41,13 +41,15 @@ export default function PreviewWrapper() {
 
   return (
     <div className="entriesWrapper">
-      {/* <div className="buttonsWrapper">
-        <button onClick={() => setFilter("All")}>All Games</button>
-        <button onClick={() => setFilter("Online Games")}>Online Games</button>
-        <button onClick={() => setFilter("Card Games")}>Card Games</button>
-        <button onClick={() => setFilter("Party Games")}>Party Games</button>
-        <button onClick={() => setFilter("Board Games")}>Board Games</button>
-          </div> */}
+      {<div className="buttonsWrapper">
+          <button onClick={() => setFilter("All")}>All Games</button>
+          <button onClick={() => setFilter("Online Games")}>Online Games</button>
+          <button onClick={() => setFilter("Card Games")}>Card Games</button>
+          <button onClick={() => setFilter("Party Games")}>Party Games</button>
+          <button onClick={() => setFilter("Board Games")}>Board Games</button>
+          <button>Single player</button>
+          <button>Multiplayer player</button>
+        </div>}
       {loading ? (
         <Loader type="Circles" color="#1ab188" height={150} width={150} />
       ) : (

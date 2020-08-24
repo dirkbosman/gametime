@@ -17,6 +17,11 @@ import logo12 from "./assets/logo12.png";
 import logo13 from "./assets/logo13.png";
 import logo14 from "./assets/logo14.png";
 import logo15 from "./assets/logo15.png";
+import logo16 from "./assets/logo16.png";
+import logo17 from "./assets/logo17.png";
+import logo18 from "./assets/logo18.png";
+import logo19 from "./assets/logo19.png";
+import logo20 from "./assets/logo20.png";
 
 function Header() {
   return (
@@ -38,6 +43,11 @@ function Header() {
             <img src={logo13} alt="logo13" />
             <img src={logo14} alt="logo14" />
             <img src={logo15} alt="logo15" />
+            <img src={logo16} alt="logo16" />
+            <img src={logo17} alt="logo17" />
+            <img src={logo18} alt="logo18" />
+            <img src={logo19} alt="logo19" />
+            <img src={logo20} alt="logo20" />
           </div>
           <div className="headline">WikiGames</div>
       </Link>

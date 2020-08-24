@@ -20,16 +20,16 @@ hr {
     -1.5px -1.5px 0 #333,
     -1.5px 1.5px 0 #333,
     1.5px -1.5px 0 #333,
-    0.5px 0.5px 0 transparent,
-    1.0px 1.0px 0 transparent,
-    1.5px 1.5px 0 transparent,
-    2.0px 2.0px 0 transparent,
-    2.5px 2.5px 0 transparent,
-    3.0px 3.0px 0 transparent, 
-    3.5px 3.5px 0 transparent, 
-    4.0px 4.0px 0 transparent, 
-    4.5px 4.5px 0 transparent, 
-    5px 5px 0 transparent;
+    0.5px 0.5px 0 #aaaaaa,
+    1.0px 1.0px 0 #aaaaaa,
+    1.5px 1.5px 0 #aaaaaa,
+    2.0px 2.0px 0 #aaaaaa,
+    2.5px 2.5px 0 #aaaaaa,
+    3.0px 3.0px 0 #aaaaaa, 
+    3.5px 3.5px 0 #aaaaaa, 
+    4.0px 4.0px 0 #aaaaaa, 
+    4.5px 4.5px 0 #aaaaaa, 
+    5px 5px 0 #aaaaaa;
 }
 
 .header-img {
@@ -43,10 +43,11 @@ hr {
 }
 
 .logoWrapper {
-    height: 100px;
+    height: 70px;
 }
 
 .logoWrapper img {
-    height: 100px;
-    width: 100px;
+    height: 70px;
+    width: 70px;
+    padding: 3px;
 }

@@ -27,6 +27,7 @@
   width: 200px;
   align-items: flex-start;
   cursor: pointer;
+  background: #fdf5ec;
 }
 
 .simple-entry > * {
@@ -39,19 +40,24 @@
   font-size: 12px;
 }
 
-.card {
+.card-1 {
   background: #fdf5ec;
   border-radius: 2px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-.card:hover {
+.card-1:hover {
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 
 .buttonsWrapper {
   display: flex;
+  background-color: #ffaf87;
+  width: 100%;
+  justify-content: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 button {
@@ -61,7 +67,7 @@ button {
   font-family: "Lato", sans-serif;
   font-weight: bold;
   font-size: 1rem;
-  padding: 10px;
-  margin: 10px;
+  padding: 5px;
+  margin: 5px;
   border-radius: 4%;
 }
