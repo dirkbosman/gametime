@@ -1,6 +1,5 @@
 import React, { createContext, useState, useEffect } from "react";
 import * as Contentful from "contentful";
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { BLOCKS, INLINES, MARKS } from "@contentful/rich-text-types";
 
 require("dotenv").config();
@@ -20,7 +19,6 @@ const options = {
     [INLINES.HYPERLINK]: (node, children) => (
       <a href={node.data.uri}>{children}</a>
     ),
-    // [BLOCKS.EMBEDDED_ENTRY]: (node, children) => <div>{children}</div>,
     [BLOCKS.EMBEDDED_ASSET]: (node) => (
       <img
         className="image"
@@ -38,7 +36,7 @@ const ContextProvider = ({ children }) => {
   const [entries, setEntries] = useState([]);
   const [filters, setFilter] = useState("All");
   const [loading, setLoading] = useState(false);
-
+  const [darkMode, setDarkMode] = useState(false);
   useEffect(() => {
     client.getEntries({ content_type: "games" }).then((response) => {
       setEntries(response.items);
@@ -50,8 +48,10 @@ const ContextProvider = ({ children }) => {
       value={{
         entries,
         setEntries,
-        filters, 
+        filters,
         setFilter,
+        darkMode,
+        setDarkMode,
         client,
         options,
         loading,

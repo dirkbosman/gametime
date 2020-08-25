@@ -11,6 +11,18 @@
   border-radius: 5px;
   margin: 10px;
 }
+.players-xs .card {
+  background: orange;
+}
+.players-sm .card {
+  background: aqua;
+}
+.players-md .card {
+  background: yellow;
+}
+.players-lg .card {
+  background: skyblue;
+}
 
 .entriesWrapper {
   width: 100vw;
@@ -28,12 +40,12 @@
   align-items: flex-start;
   cursor: pointer;
   background: #fdf5ec;
+  color: #505050;
 }
 
 .simple-entry > * {
   margin-block-start: 10px;
   margin-block-end: 10px;
-  color: #505050
 }
 
 .simple-entry p {
@@ -72,3 +84,8 @@ button {
   border-radius: 4%;
 }
 
+.buttonDark {
+  border: none;
+  background-color: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.55);
+}

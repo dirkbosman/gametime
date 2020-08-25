@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./header.css";
 import { Link } from "react-router-dom";
+import { StateContext } from "../../context";
 
 import logo1 from "./assets/logo1.png";
 import logo2 from "./assets/logo2.png";
@@ -24,9 +25,11 @@ import logo19 from "./assets/logo19.png";
 import logo20 from "./assets/logo20.png";
 
 function Header() {
+  const { setFilter } = useContext(StateContext);
   return (
     <div className="headerContainer">
-      <Link to="/" style={{textDecoration: "none"}}>
+
+      <Link to="/" onClick={() => setFilter("All")} style={{textDecoration: "none"}}>
           <div className="logoWrapper">
             <div className="logo-img-wrapper">
               <img src={logo1} alt="logo1" />
