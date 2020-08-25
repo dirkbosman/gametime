@@ -10,9 +10,6 @@ import "./App.css";
 
 function App() {
   const { darkMode } = useContext(StateContext);
-
-  // map over existing entries where category = filters
-
   return (
     <Router>
       <div
@@ -24,7 +21,7 @@ function App() {
           <Route exact path="/">
             <PreviewWrapper />
           </Route>
-          <Route path="/:name">
+          <Route path="/:slug">
             <Entry />
           </Route>
         </Switch>
