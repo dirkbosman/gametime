@@ -26,6 +26,13 @@
   display: flex;
 }
 
+.button-wrapper button {
+  background-color: #ffaf87;
+  border: none;
+  padding: 5px;
+  border-radius: 4px;
+}
+
 .button-wrapper img {
   height: 20px;
   width: 20px;
@@ -46,11 +53,16 @@
 
 .playerCount {
   color: rgb(0, 0, 0);
-  background-color: rgb(139, 184, 226);
+  background-color: #83c5be;
   padding: 2px;
   margin-left: 30%;
   margin-right: 30%;
   border-radius: 5px;
+}
+
+.paragraph_test {
+  text-align: left;
+  font-size: 0.8rem;
 }
 
 @media only screen and (max-width: 800px) {

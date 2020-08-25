@@ -90,22 +90,27 @@ function Header() {
           <img src={logo20} alt="logo20" />
         </div>
       </div>
-      <div>
-        <Link
-          to="/"
-          onClick={() => setFilter("All")}
-          style={{ textDecoration: "none" }}
-        >
-          <div className="headline">WikiGames</div>
-        </Link>
-        <button
-          className="darkModeButtom"
-          onClick={() => setDarkMode(!darkMode)}
-        >
-          {darkMode ? "☀️" : "🌙"}
-        </button>
+
+        <div className="headline-text">
+          <Link
+            to="/"
+            onClick={() => setFilter("All")}
+            style={{ textDecoration: "none" }}
+          >
+            <div className="headline">WikiGames</div>
+            
+          </Link>
+        </div>
+        <div className="icon-wrapper">
+          <button
+            className="darkModeButtom"
+            onClick={() => setDarkMode(!darkMode)}
+          >
+            {darkMode ? "☀️" : "🌙"}
+          </button>
+        </div>
       </div>
-    </div>
+
   );
 }
 

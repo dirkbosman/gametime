@@ -8,8 +8,7 @@ hr {
 .headline {
   font-family: "Bangers", cursive;
   margin-top: 30px;
-  margin-bottom: 20px;
-  font-size: 60px;
+  font-size: 50px;
   font-weight: bold;
   letter-spacing: 6px;
   color: white;
@@ -19,6 +18,25 @@ hr {
     2px 2px 0 #aaaaaa, 2.5px 2.5px 0 #aaaaaa, 3px 3px 0 #aaaaaa,
     3.5px 3.5px 0 #aaaaaa, 4px 4px 0 #aaaaaa, 4.5px 4.5px 0 #aaaaaa,
     5px 5px 0 #aaaaaa;
+}
+
+.headline-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.headline-text {
+  display: flex;
+  justify-content: center;
+}
+
+.icon-wrapper {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.icon-wrapper button {
+  border-radius: 50%;
 }
 
 .header-img {
@@ -32,7 +50,7 @@ hr {
 }
 
 .logoWrapper {
-  height: 70px;
+  height: 60px;
   display: grid;
   grid-template-columns: repeat(20, 1fr);
   overflow: hidden;
@@ -40,7 +58,7 @@ hr {
 
 .logoWrapper img {
   height: 100%;
-  width: 70px;
+  width: 60px;
 }
 
 .logo-img-wrapper {
@@ -50,7 +68,7 @@ hr {
 .darkModeButtom {
   height: 40px;
   width: 40px;
-  background-color: rgb(139, 184, 226);
+  background-color: #505050;
   border: none;
   border-radius: 5px;
 }

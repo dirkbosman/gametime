@@ -56,8 +56,7 @@ export default function PreviewWrapper() {
           <p className="playerCount">{playerCount(entry.fields.players)}</p>
           <h3>{entry.fields.name}</h3>
           <h5>
-            {entry.fields.category}:<br />
-            {/* {entry.fields.subCategory} */}
+            {entry.fields.category}
           </h5>
         </div>
       </Link>
@@ -70,7 +69,7 @@ export default function PreviewWrapper() {
           className={darkMode ? "buttonDark" : "buttonLight"}
           onClick={() => setFilter("All")}
         >
-          All
+          All Games
         </button>
         <button
           className={darkMode ? "buttonDark" : "buttonLight"}
@@ -96,6 +95,7 @@ export default function PreviewWrapper() {
         >
           Board Games
         </button>
+        
       </div>
       {loading ? (
         <Loader type="Circles" color="#1ab188" height={150} width={150} />

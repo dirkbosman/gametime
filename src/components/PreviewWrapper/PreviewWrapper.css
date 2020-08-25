@@ -98,9 +98,9 @@
 
 .playerCount {
   color: rgb(0, 0, 0);
-  background-color: rgb(139, 184, 226);
+  background-color: #51908a;
   padding: 2px;
   margin-left: 30%;
   margin-right: 30%;
-  border-radius: 5px;
+  border-radius: 4px;
 }

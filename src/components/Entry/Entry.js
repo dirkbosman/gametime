@@ -57,8 +57,7 @@ export default function Entry() {
           <p className="playerCount">{playerCount(entry.fields.players)}</p>
           <h3>{entry.fields.name}</h3>
           <h5>
-            {entry.fields.category}:<br />
-            {entry.fields.subCategory}
+            {entry.fields.category}
           </h5>
         </div>
       </Link>
@@ -80,34 +79,34 @@ export default function Entry() {
               network="twitter"
               url={`http://twitter.com/share?text=${"Check This Out!"}&url=${slug}`}
               target="_blank"
-              style={{ margin: 5, height: 35, width: 35 }}
+              style={{ margin: 5, height: 30, width: 30 }}
             />
             <SocialIcon
               network="facebook"
               url={`http://www.facebook.com/sharer.php?u=${slug}`}
               target="_blank"
-              style={{ margin: 5, height: 35, width: 35 }}
+              style={{ margin: 5, height: 30, width: 30 }}
             />
             <SocialIcon
               network="instagram"
               url="https://instagram.com"
               target="_blank"
-              style={{ margin: 5, height: 35, width: 35 }}
+              style={{ margin: 5, height: 30, width: 30 }}
             />
             <SocialIcon
               network="pinterest"
               url={`http://pinterest.com/pin/create/button/?url=${slug}&description=${"Check This Out!"}`}
               target="_blank"
-              style={{ margin: 5, height: 35, width: 35 }}
+              style={{ margin: 5, height: 30, width: 30 }}
             />
             <SocialIcon
               network="whatsapp"
-              style={{ margin: 5, height: 35, width: 35 }}
+              style={{ margin: 5, height: 30, width: 30 }}
             />
           </div>
         </div>
 
-        <h1>{entry.fields.name}</h1>
+        <h2>{entry.fields.name}</h2>
         <div className="main-text">
           {documentToReactComponents(entry.fields.description, options)}
         </div>
