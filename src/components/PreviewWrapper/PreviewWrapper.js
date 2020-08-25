@@ -12,6 +12,8 @@ export default function PreviewWrapper() {
     setFilter,
     client,
     loading,
+    darkMode,
+    setDarkMode,
   } = useContext(StateContext);
 
   const Entries = entries
@@ -35,6 +37,7 @@ export default function PreviewWrapper() {
         style={{ textDecoration: "none" }}
         // to={"/" + entry.fields.name}
         to={"/" + entry.fields.slug}
+
         onClick={() => setFilter(entry.fields.category)}
       >
         <div
@@ -42,8 +45,17 @@ export default function PreviewWrapper() {
           key={entry.sys.id}
           // href={entry.fields.path}
           href={entry.fields.slug}
+          style={
+            darkMode
+              ? {
+                  backgroundColor: "rgba(255, 255, 255, 0.05)",
+                  color: "rgba(255, 255, 255, 0.55)",
+                }
+              : {}
+          }
         >
           <p>{entry.fields.players} Player / Players</p>
+
           <h3>{entry.fields.name}</h3>
           <h5>
             {entry.fields.category}:<br />
@@ -54,12 +66,46 @@ export default function PreviewWrapper() {
     ));
 
   return (
-    <div className="entriesWrapper">
-      <button onClick={() => setFilter("All")}>All</button>
-      <button onClick={() => setFilter("Online Games")}>Online Games</button>
-      <button onClick={() => setFilter("Card Games")}>Card Games</button>
-      <button onClick={() => setFilter("Party Games")}>Party Games</button>
-      <button onClick={() => setFilter("Board Games")}>Board Games</button>
+
+    <div className="container">
+      <div className="filterWrapper">
+        <button
+          className={darkMode ? "buttonDark" : ""}
+          onClick={() => setFilter("All")}
+        >
+          All
+        </button>
+        <button
+          className={darkMode ? "buttonDark" : ""}
+          onClick={() => setFilter("Online Games")}
+        >
+          Online Games
+        </button>
+        <button
+          className={darkMode ? "buttonDark" : ""}
+          onClick={() => setFilter("Card Games")}
+        >
+          Card Games
+        </button>
+        <button
+          className={darkMode ? "buttonDark" : ""}
+          onClick={() => setFilter("Party Games")}
+        >
+          Party Games
+        </button>
+        <button
+          className={darkMode ? "buttonDark" : ""}
+          onClick={() => setFilter("Board Games")}
+        >
+          Board Games
+        </button>
+        <button
+          className={darkMode ? "buttonDark" : ""}
+          onClick={() => setDarkMode(!darkMode)}
+        >
+          Dark Mode
+        </button>
+      </div>
       {loading ? (
         <Loader type="Circles" color="#1ab188" height={150} width={150} />
       ) : (
