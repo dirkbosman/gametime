@@ -8,7 +8,6 @@
   max-width: 400px;
   max-height: 600px;
   color: transparent;
-  background-color: white;
   border-radius: 5px;
   margin: 10px;
 }
@@ -28,12 +27,12 @@
   width: 200px;
   align-items: flex-start;
   cursor: pointer;
+  color: #505050;
 }
 
 .simple-entry > * {
   margin-block-start: 10px;
   margin-block-end: 10px;
-  color: #505050
 }
 
 .simple-entry p {
@@ -41,7 +40,7 @@
 }
 
 .card {
-  background: #fff;
+  /* background: #fff; */
   border-radius: 2px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
@@ -49,4 +48,10 @@
 
 .card:hover {
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.buttonDark {
+  border: none;
+  background-color: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.55);
 }
