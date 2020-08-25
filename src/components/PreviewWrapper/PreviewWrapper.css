@@ -72,7 +72,7 @@
   margin-bottom: 10px;
 }
 
-button {
+.buttonLight {
   background-color: #ffaf87;
   border: none;
   color: #505050;
@@ -87,5 +87,20 @@ button {
 .buttonDark {
   border: none;
   background-color: rgba(255, 255, 255, 0.08);
-  color: rgba(255, 255, 255, 0.55);
+  color: #505050;
+  font-family: "Lato", sans-serif;
+  font-weight: bold;
+  font-size: 1rem;
+  padding: 5px;
+  margin: 5px;
+  border-radius: 4%;
+}
+
+.playerCount {
+  color: rgb(0, 0, 0);
+  background-color: rgb(139, 184, 226);
+  padding: 2px;
+  margin-left: 30%;
+  margin-right: 30%;
+  border-radius: 5px;
 }

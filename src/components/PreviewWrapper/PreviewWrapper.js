@@ -37,7 +37,6 @@ export default function PreviewWrapper() {
         style={{ textDecoration: "none" }}
         // to={"/" + entry.fields.name}
         to={"/" + entry.fields.slug}
-
         onClick={() => setFilter(entry.fields.category)}
       >
         <div
@@ -54,61 +53,54 @@ export default function PreviewWrapper() {
               : {}
           }
         >
-          <p>{entry.fields.players} Player / Players</p>
-
+          <p className="playerCount">{playerCount(entry.fields.players)}</p>
           <h3>{entry.fields.name}</h3>
           <h5>
             {entry.fields.category}:<br />
-            {entry.fields.subCategory}
+            {/* {entry.fields.subCategory} */}
           </h5>
         </div>
       </Link>
     ));
 
   return (
-    <div className="entriesWrapper">
-      {<div className="buttonsWrapper">
+    <div className="entriesContainer">
+      <div className="buttonsWrapper">
         <button
-          className={darkMode ? "buttonDark" : ""}
+          className={darkMode ? "buttonDark" : "buttonLight"}
           onClick={() => setFilter("All")}
         >
           All
         </button>
         <button
-          className={darkMode ? "buttonDark" : ""}
+          className={darkMode ? "buttonDark" : "buttonLight"}
           onClick={() => setFilter("Online Games")}
         >
           Online Games
         </button>
         <button
-          className={darkMode ? "buttonDark" : ""}
+          className={darkMode ? "buttonDark" : "buttonLight"}
           onClick={() => setFilter("Card Games")}
         >
           Card Games
         </button>
         <button
-          className={darkMode ? "buttonDark" : ""}
+          className={darkMode ? "buttonDark" : "buttonLight"}
           onClick={() => setFilter("Party Games")}
         >
           Party Games
         </button>
         <button
-          className={darkMode ? "buttonDark" : ""}
+          className={darkMode ? "buttonDark" : "buttonLight"}
           onClick={() => setFilter("Board Games")}
         >
           Board Games
-        </button>
-        <button
-          className={darkMode ? "buttonDark" : ""}
-          onClick={() => setDarkMode(!darkMode)}
-        >
-          Dark Mode
         </button>
       </div>
       {loading ? (
         <Loader type="Circles" color="#1ab188" height={150} width={150} />
       ) : (
-        <div>{Entries}</div>
+        <div className="entriesWrapper">{Entries}</div>
       )}
     </div>
   );
@@ -116,6 +108,14 @@ export default function PreviewWrapper() {
 
 function convertStringToCategoryArray(str) {
   return str.split(",").map((item) => item.trim());
+}
+
+function playerCount(str) {
+  if (str === "1") {
+    return str + " Player 👩";
+  } else {
+    return str + " Players 👩‍👧‍👦";
+  }
 }
 
 function addColorClass(num) {

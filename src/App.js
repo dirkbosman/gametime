@@ -3,7 +3,6 @@ import { Switch, BrowserRouter as Router, Route } from "react-router-dom";
 import Header from "./components/Header/Header";
 import PreviewWrapper from "./components/PreviewWrapper/PreviewWrapper";
 import Entry from "./components/Entry/Entry";
-import Footer from "./components/Footer/Footer";
 import { StateContext } from "./context";
 
 import "./App.css";
@@ -25,7 +24,6 @@ function App() {
             <Entry />
           </Route>
         </Switch>
-        <Footer />
       </div>
     </Router>
   );
