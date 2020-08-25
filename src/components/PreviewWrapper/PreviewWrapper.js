@@ -41,7 +41,7 @@ export default function PreviewWrapper() {
         onClick={() => setFilter(entry.fields.category)}
       >
         <div
-          className="simple-entry card"
+          className="simple-entry card-1"
           key={entry.sys.id}
           // href={entry.fields.path}
           href={entry.fields.slug}
@@ -66,9 +66,8 @@ export default function PreviewWrapper() {
     ));
 
   return (
-
-    <div className="container">
-      <div className="filterWrapper">
+    <div className="entriesWrapper">
+      {<div className="buttonsWrapper">
         <button
           className={darkMode ? "buttonDark" : ""}
           onClick={() => setFilter("All")}
@@ -109,7 +108,7 @@ export default function PreviewWrapper() {
       {loading ? (
         <Loader type="Circles" color="#1ab188" height={150} width={150} />
       ) : (
-        <div className="entriesWrapper">{Entries}</div>
+        <div>{Entries}</div>
       )}
     </div>
   );
