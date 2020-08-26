@@ -1,7 +1,7 @@
 .detailed-entry-container {
   display: grid;
   place-items: center;
-  margin-bottom: 100px;
+  margin-bottom: 40px;
   margin-top: 20px;
 }
 

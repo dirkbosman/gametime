@@ -5,7 +5,7 @@
 }
 
 .relatedEntriesWrapper {
-  background-color: lightskyblue;
+  /* background-color: lightskyblue; */
   display: flex;
   flex-direction: row;
   justify-content: center;
