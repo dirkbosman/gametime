@@ -32,10 +32,10 @@ export default function PreviewWrapper() {
       <Link
         className={addColorClass(entry.fields.players)}
         style={{ textDecoration: "none" }}
-        to={"/" + entry.fields.slug}
         onClick={() =>
-          handleSlugAndFilter(entry.fields.slug, entry.fields.category)
+          handleSlugAndFilter(entry.fields.category, entry.fields.slug)
         }
+        to={"/" + entry.fields.slug}
       >
         <div
           className="simple-entry card-1"
@@ -62,9 +62,10 @@ export default function PreviewWrapper() {
         </div>
       </Link>
     ));
-  const handleSlugAndFilter = (slugPath, filter) => {
-    setSlugs(slugPath);
+
+  const handleSlugAndFilter = (filter, slugPath) => {
     setFilter(filter);
+    setSlugs(slugPath);
   };
 
   return (
