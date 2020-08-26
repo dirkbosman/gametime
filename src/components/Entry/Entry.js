@@ -49,7 +49,8 @@ export default function Entry() {
           style={
             darkMode
               ? {
-                  backgroundColor: "rgba(255, 255, 255, 0.05)",
+                backgroundColor: "#333333",
+                color: "#fff",
                 }
               : {}
           }
@@ -69,7 +70,16 @@ export default function Entry() {
     // .filter((entry) => entry.fields.name === name)
     .filter((entry) => entry.fields.slug === slug)
     .map((entry) => (
-      <div className="detailed-entry card-2" key={entry.sys.id}>
+      <div className="detailed-entry card-2"
+      key={entry.sys.id}
+      style={
+        darkMode
+          ? {
+            backgroundColor: "#333333",
+            color: "#fff",
+            }
+          : {}
+      }>
         <div className="card-header">
           <div className="button-wrapper">
             <button onClick={goBack}>Back</button>

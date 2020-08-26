@@ -47,8 +47,8 @@ export default function PreviewWrapper() {
           style={
             darkMode
               ? {
-                  backgroundColor: "rgba(255, 255, 255, 0.05)",
-                  color: "rgba(255, 255, 255, 0.55)",
+                  backgroundColor: "#333333",
+                  color: "#fff",
                 }
               : {}
           }

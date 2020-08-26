@@ -67,9 +67,18 @@ hr {
 }
 
 .darkModeButtom {
-  height: 40px;
-  width: 40px;
+  height: 30px;
+  width: 30px;
   background-color: #505050;
   border: none;
   border-radius: 5px;
+}
+
+
+@media only screen and (max-width: 800px) {
+  .headline {
+    font-size: 40px;
+    margin-top: 20px;
+  }
+
 }
