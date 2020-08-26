@@ -19,12 +19,15 @@ export default function PreviewWrapper() {
   const Entries = entries
     .filter(function (entries) {
       if (filters === "All") {
+        // console.log(entries.fields.category);
         return entries.fields.category;
       } else {
         // convertStringToCategoryArray -> helper function
         const categories = convertStringToCategoryArray(
           entries.fields.category
         );
+        // console.log(categories);
+        // console.log(categories.includes(filters));
         return categories.includes(filters);
       }
     })
@@ -38,6 +41,9 @@ export default function PreviewWrapper() {
         // to={"/" + entry.fields.name}
         to={"/" + entry.fields.slug}
         onClick={() => setFilter(entry.fields.category)}
+        // onClick={() =>
+        //   setFilter(convertStringToCategoryArray(entry.fields.category))
+        // }
       >
         <div
           className="simple-entry card-1"
