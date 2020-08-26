@@ -1,8 +1,7 @@
 import React, { useContext } from "react";
-import "./header.css";
 import { Link } from "react-router-dom";
 import { StateContext } from "../../context";
-
+import "./Header.css";
 import logo1 from "./assets/logo1.png";
 import logo2 from "./assets/logo2.png";
 import logo3 from "./assets/logo3.png";
@@ -91,26 +90,24 @@ function Header() {
         </div>
       </div>
 
-        <div className="headline-text">
-          <Link
-            to="/"
-            onClick={() => setFilter("All")}
-            style={{ textDecoration: "none" }}
-          >
-            <div className="headline">WikiGames</div>
-            
-          </Link>
-        </div>
-        <div className="icon-wrapper">
-          <button
-            className="darkModeButtom"
-            onClick={() => setDarkMode(!darkMode)}
-          >
-            {darkMode ? "☀️" : "🌙"}
-          </button>
-        </div>
+      <div className="headline-text">
+        <Link
+          to="/"
+          onClick={() => setFilter("All")}
+          style={{ textDecoration: "none" }}
+        >
+          <div className="headline">WikiGames</div>
+        </Link>
       </div>
-
+      <div className="icon-wrapper">
+        <button
+          className="darkModeButtom"
+          onClick={() => setDarkMode(!darkMode)}
+        >
+          {darkMode ? "☀️" : "🌙"}
+        </button>
+      </div>
+    </div>
   );
 }
 

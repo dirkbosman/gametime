@@ -1,6 +1,5 @@
 .PreviewWrapper {
   display: flex;
-  /* flex-direction: row; */
   align-items: center;
   justify-content: center;
   height: 600px;
@@ -10,18 +9,6 @@
   color: transparent;
   border-radius: 5px;
   margin: 10px;
-}
-.players-xs .card {
-  background: orange;
-}
-.players-sm .card {
-  background: aqua;
-}
-.players-md .card {
-  background: yellow;
-}
-.players-lg .card {
-  background: skyblue;
 }
 
 .entriesWrapper {
@@ -96,9 +83,38 @@
   border-radius: 4%;
 }
 
-.playerCount {
+/* .playerCount {
   color: rgb(0, 0, 0);
   background-color: #51908a;
+  padding: 2px;
+  margin-left: 30%;
+  margin-right: 30%;
+  border-radius: 4px;
+} */
+
+.players-xs p {
+  background: #88d8b0;
+  padding: 2px;
+  margin-left: 30%;
+  margin-right: 30%;
+  border-radius: 4px;
+}
+.players-sm p {
+  background-color: #add6ff;
+  padding: 2px;
+  margin-left: 30%;
+  margin-right: 30%;
+  border-radius: 4px;
+}
+.players-md p {
+  background: #fdf498;
+  padding: 2px;
+  margin-left: 30%;
+  margin-right: 30%;
+  border-radius: 4px;
+}
+.players-lg p {
+  background: #e4dcf1;
   padding: 2px;
   margin-left: 30%;
   margin-right: 30%;

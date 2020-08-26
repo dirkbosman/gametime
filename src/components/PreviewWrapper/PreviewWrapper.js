@@ -53,11 +53,13 @@ export default function PreviewWrapper() {
               : {}
           }
         >
-          <p className="playerCount">{playerCount(entry.fields.players)}</p>
+          {/* <p className="playerCount">{playerCount(entry.fields.players)}</p> */}
+          <p className={addColorClass(entry.fields.players)}>
+            {playerCount(entry.fields.players)}
+          </p>
+
           <h3>{entry.fields.name}</h3>
-          <h5>
-            {entry.fields.category}
-          </h5>
+          <h5>{entry.fields.category}</h5>
         </div>
       </Link>
     ));
@@ -95,7 +97,6 @@ export default function PreviewWrapper() {
         >
           Board Games
         </button>
-        
       </div>
       {loading ? (
         <Loader type="Circles" color="#1ab188" height={150} width={150} />

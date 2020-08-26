@@ -33,6 +33,7 @@ hr {
 .icon-wrapper {
   display: flex;
   justify-content: flex-end;
+  padding-right: 20px;
 }
 
 .icon-wrapper button {
