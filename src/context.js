@@ -35,8 +35,10 @@ const options = {
 const ContextProvider = ({ children }) => {
   const [entries, setEntries] = useState([]);
   const [filters, setFilter] = useState("All");
+  const [slugs, setSlugs] = useState([]);
   const [loading, setLoading] = useState(false);
   const [darkMode, setDarkMode] = useState(false);
+
   useEffect(() => {
     client.getEntries({ content_type: "games" }).then((response) => {
       setEntries(response.items);
@@ -50,6 +52,8 @@ const ContextProvider = ({ children }) => {
         setEntries,
         filters,
         setFilter,
+        slugs,
+        setSlugs,
         darkMode,
         setDarkMode,
         client,

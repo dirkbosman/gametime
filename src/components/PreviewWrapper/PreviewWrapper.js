@@ -7,27 +7,21 @@ import "./PreviewWrapper.css";
 export default function PreviewWrapper() {
   const {
     entries,
-    setEntries,
     filters,
     setFilter,
-    client,
+    setSlugs,
     loading,
     darkMode,
-    setDarkMode,
   } = useContext(StateContext);
 
   const Entries = entries
     .filter(function (entries) {
       if (filters === "All") {
-        // console.log(entries.fields.category);
         return entries.fields.category;
       } else {
-        // convertStringToCategoryArray -> helper function
         const categories = convertStringToCategoryArray(
           entries.fields.category
         );
-        // console.log(categories);
-        // console.log(categories.includes(filters));
         return categories.includes(filters);
       }
     })
@@ -38,17 +32,14 @@ export default function PreviewWrapper() {
       <Link
         className={addColorClass(entry.fields.players)}
         style={{ textDecoration: "none" }}
-        // to={"/" + entry.fields.name}
         to={"/" + entry.fields.slug}
-        onClick={() => setFilter(entry.fields.category)}
-        // onClick={() =>
-        //   setFilter(convertStringToCategoryArray(entry.fields.category))
-        // }
+        onClick={() =>
+          handleSlugAndFilter(entry.fields.slug, entry.fields.category)
+        }
       >
         <div
           className="simple-entry card-1"
           key={entry.sys.id}
-          // href={entry.fields.path}
           href={entry.fields.slug}
           style={
             darkMode
@@ -59,8 +50,10 @@ export default function PreviewWrapper() {
               : {}
           }
         >
-          {/* <p className="playerCount">{playerCount(entry.fields.players)}</p> */}
-          <p className={addColorClass(entry.fields.players)}>
+          <p
+            style={{ color: "black" }}
+            className={addColorClass(entry.fields.players)}
+          >
             {playerCount(entry.fields.players)}
           </p>
 
@@ -69,6 +62,10 @@ export default function PreviewWrapper() {
         </div>
       </Link>
     ));
+  const handleSlugAndFilter = (slugPath, filter) => {
+    setSlugs(slugPath);
+    setFilter(filter);
+  };
 
   return (
     <div className="entriesContainer">

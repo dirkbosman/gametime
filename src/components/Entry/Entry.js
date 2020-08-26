@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { StateContext } from "../../context";
@@ -7,57 +7,28 @@ import { SocialIcon } from "react-social-icons";
 import "./Entry.css";
 
 export default function Entry() {
-  const {
-    entries,
-    setEntries,
-    filters,
-    setFilter,
-    client,
-    options,
-    darkMode,
-  } = useContext(StateContext);
+  const { entries, filters, setFilter, slugs, options, darkMode } = useContext(
+    StateContext
+  );
   require("dotenv").config();
 
   const { slug } = useParams();
 
-  // useEffect(() => {
-  //   client.getEntries({ content_type: "games" }).then((response) => {
-  //     setEntries(response.items);
-  //   });
-  // }, []);
-
-  const RelatedEntries = entries
-    .filter(function (entries) {
-      if (filters) {
-        return entries.fields.category === filters;
-      }
-    })
-    .map((entry) => (
-      <Link style={{ textDecoration: "none" }} to={"/" + entry.fields.slug}>
-        <div
-          className="simple-entry card-1"
-          key={entry.sys.id}
-          href={entry.fields.slug}
-          style={
-            darkMode
-              ? {
-                  backgroundColor: "rgba(255, 255, 255, 0.05)",
-                }
-              : {}
-          }
-        >
-          <p className="playerCount">{playerCount(entry.fields.players)}</p>
-          <h3>{entry.fields.name}</h3>
-          <h5>{entry.fields.category}</h5>
-        </div>
-      </Link>
-    ))
-    .slice(0, 3);
-
   const Entry = entries
-    .filter((entry) => entry.fields.slug === slug)
+    .filter((entry) => entry.fields.slug === slugs)
     .map((entry) => (
-      <div className="detailed-entry card-2" key={entry.sys.id}>
+      <div
+        className="detailed-entry card-2"
+        key={entry.sys.id}
+        style={
+          darkMode
+            ? {
+                backgroundColor: "#333333",
+                color: "#fff",
+              }
+            : {}
+        }
+      >
         <div className="card-header">
           <div className="button-wrapper">
             <button onClick={goBack}>Back</button>
@@ -107,12 +78,63 @@ export default function Entry() {
     window.history.back();
   }
 
+  const RelatedEntries = entries
+    .filter(function (entries) {
+      if (filters) {
+        if (entries.fields.slug === slug) {
+          return false;
+        }
+        const filterz = convertStringToCategoryArray(filters);
+        const categories = convertStringToCategoryArray(
+          entries.fields.category
+        );
+        return categories.includes(filterz[0]);
+      }
+    })
+    .map((entry) => (
+      <Link style={{ textDecoration: "none" }} to={"/" + entry.fields.slug}>
+        <div
+          className="simple-entry card-1"
+          key={entry.sys.id}
+          href={entry.fields.slug}
+          style={
+            darkMode
+              ? {
+                  backgroundColor: "#333333",
+                  color: "#fff",
+                }
+              : {}
+          }
+        >
+          <p className="playerCount">{playerCount(entry.fields.players)}</p>
+          <h3>{entry.fields.name}</h3>
+          <h5>{entry.fields.category}</h5>
+        </div>
+      </Link>
+    ))
+    .slice(0, 3);
+
   return (
     <div>
       <div className="detailed-entry-container">{Entry}</div>
+      <h3
+        style={
+          darkMode
+            ? {
+                color: "#fff",
+              }
+            : {}
+        }
+      >
+        Games you also may like...
+      </h3>
       <div className="relatedEntriesWrapper">{RelatedEntries}</div>
     </div>
   );
+}
+
+function convertStringToCategoryArray(str) {
+  return str.split(",").map((item) => item.trim());
 }
 
 function playerCount(str) {
