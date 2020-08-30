@@ -13,5 +13,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ```
 
 ## Deployment: 
-- Github Pages: Add `.env.production`-file in root directory + package.json's scripts (and build + deploy to `gh-pages`-branch). 
+- Github Pages: Add `.env.production`-file in root directory + package.json's scripts (and build + deploy to `gh-pages`-branch).
+```
+- add .env and .env.production to your .gitignore-file.
+```
 - Heroku: You can create your own environment variables in the interface.
