@@ -1,6 +1,8 @@
-# GameTime - A thin react client for contentful with a `game`-theme
+## GameTime
 
-## Getting Started
+- A thin react client for contentful with a "game"-theme
+
+### Getting Started
 
 ```
 git clone https://github.com/dirkbosman/gametime.git
@@ -8,11 +10,11 @@ cd gametime
 npm i
 ```
 
-## Set-up Credentials
+### Set-up Credentials
 
 `.env`-file & `.env.production`-file both in your root directory with contentful details (view appendix).
 
-## Set-up Contentful (Data) Model
+### Set-up Contentful (Data) Model
 
 Set-up new contentful content-model (name: `ListOfGames`, content delivery id: `games`) with the following fields:
 
@@ -24,7 +26,7 @@ Set-up new contentful content-model (name: `ListOfGames`, content delivery id: `
 - Description 	(Rich text)
 ```
 
-## Run Server / Deploy
+### Run Server / Deploy
 
 ```
 npm start       # navigate to -> http://localhost:3000/gametime#/
@@ -32,7 +34,7 @@ or
 npm run deploy  # navigate to -> https://dirkbosman.github.io/gametime/#/
 ```
 
-## Appendix
+### Appendix
 
 - This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 - I enabled `HashRouter` (and not `BrowserRouter`) when deploying to Github-pages.
