@@ -1,6 +1,4 @@
-## GameTime
-
-- A thin react client for contentful with a "game"-theme
+GameTime - A thin react client for [contentful](https://www.contentful.com/) with a "game"-theme.
 
 ### Getting Started
 
@@ -19,11 +17,11 @@ npm i
 Set-up new contentful content-model (name: `ListOfGames`, content delivery id: `games`) with the following fields:
 
 ```
-- Name 	   	    (Short text)
-- slug     	    (Short text)
-- Category 	    (Short text)
-- Players  	    (Short text)
-- Description 	(Rich text)
+- Name -> name (Short text)
+- slug -> slug (Short text)
+- Category -> category (Short text)
+- Players -> players (Short text)
+- Description -> description (Rich text)
 ```
 
 ### Run Server / Deploy
