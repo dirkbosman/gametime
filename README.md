@@ -1,4 +1,6 @@
-GameTime - A thin react client for [contentful](https://www.contentful.com/) with a "game"-theme.
+## GameTime (React App)
+
+- A thin react client for [contentful](https://www.contentful.com/) with a "game"-theme.
 
 ### Getting Started
 
